@@ -37,6 +37,8 @@ public class App {
                 .limit(10)
                 .collect(Collectors.toList())
                 .forEach(e -> log.info("{}", e));
+
+        log.info("Total words : {}", WordCountJob.totalWordCount.longValue());
         executorService.awaitTermination(45, TimeUnit.SECONDS);
         executorService.shutdownNow();
 
